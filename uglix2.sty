@@ -1,0 +1,118 @@
+% uglix v2.0
+%
+% 2020-10
+%
+% INSTALL FONTS FIRST
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uglix2}
+\RequireXeTeX
+
+
+%------- fonts
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{unicode-math}
+
+\setmathfont{Fira Math}
+\setmathfont{XITS Math}[range={\vdots,\ddots,\setminus,\bigtimes,\preceq,\star,\bigstar}]
+\setmonofont{Fira Mono}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmbrs}{m}{n}
+\newif\if@thinfonts \@thinfontsfalse
+\DeclareOption{thinfonts}{\@thinfontstrue}
+
+
+\DeclareOption*{}
+\ProcessOptions
+
+\if@thinfonts
+    \setmainfont[BoldFont=Fira Sans Regular]{Fira Sans Light}	
+    \setfontfamily{\titlefont}{Fira Sans Bold}
+\else
+    \setmainfont{Fira Sans}	
+    \setfontfamily{\titlefont}{Fira Sans ExtraBold}
+\fi
+
+\setmathfont{Fira Math}
+\setmathfont{XITS Math}[range={\vdots,\ddots,\setminus,\bigtimes,\preceq,\star,\bigstar}]
+
+%------- general formatting
+
+\RequirePackage{hyperref}
+\hypersetup{pdfborder = 0 0 0}
+\urlstyle{same}
+\newcommand{\link}[2]{\href{#1}{\color{blue}#2}}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.2}
+\newcommand{\og}{«}
+\newcommand{\fg}{»}
+\usepackage{numprint}
+\newcommand{\np}{\numprint}
+
+%------- colors
+
+\RequirePackage{xcolor}
+\usepackage{colortbl}
+
+\input{uglix2-colors.tex}
+
+
+\RequirePackage{polyglossia}
+\setdefaultlanguage{french}
+
+
+%------- base
+
+
+\RequirePackage[d]{esvect}
+\RequirePackage{multicol}
+\RequirePackage{enumerate}
+\RequirePackage{tabularx}
+\input{uglix2-base.tex}
+
+%------- tikz
+
+\RequirePackage{ifthen}
+\RequirePackage{xargs}
+\RequirePackage{tikz}
+\RequirePackage{tkz-tab}
+\usetikzlibrary{shadows,decorations.pathmorphing,calc,backgrounds,tikzmark}
+\input{uglix2-tikz.tex}
+
+%------- environments
+
+\RequirePackage{framed}
+\input{uglix2-environments.tex}
+
+
+%------- prog
+
+\RequirePackage{minted}
+\input{uglix2-prog.tex}
+
+
+
+\makeatletter
+
+	%------- book class
+
+
+	\@ifclassloaded{book}
+		{
+		\RequirePackage{titlesec}
+		\RequirePackage{fancyhdr}
+		\input{uglix2-book.tex}
+		\renewcommand\C{\ensuremath{\mathbf{C}}} 												% Complexes
+		}
+		{}
+	
+	%------- article class
+	
+	\@ifclassloaded{article}
+		{
+		\pagestyle{empty}	
+		\renewcommand\C{\ensuremath{\mathbf{C}}} 												% Complexes
+		}
+		{}
+\makeatother

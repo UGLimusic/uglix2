@@ -1,0 +1,35 @@
+% uglix v0.2
+%
+% 2020-07
+%
+%
+% COMMANDES LIEES A MINTED
+%
+% Python
+%
+\newcommand\pythoninline[1]{\mintinline{python}{#1}}
+\newcommand\htmlinline[1]{\mintinline{html}{#1}}
+\newenvironment{pythonshell}{\VerbatimEnvironment\begin{modulbox}{python@color}{Shell Python}\begin{minted}[breaklines]{python}}{\end{minted}\end{modulbox}}
+\newenvironment{pythoncode}{\VerbatimEnvironment\begin{modulbox}{python@color}{Code Python}\begin{minted}[breaklines]{python}}{\end{minted}\end{modulbox}}
+
+\newenvironment{processing}{\VerbatimEnvironment\begin{modulbox}{python@color}{CodeProcessing}\begin{minted}[breaklines]{python}}{\end{minted}\end{modulbox}}
+
+% la seule qui marche ? utiliser des macros plutôt
+\newenvironment{pyc}{\begin{modulbox}{python@color}{Code Python}}{\end{modulbox}}
+
+\newcommand\pythonfile[1]{\begin{pyc}\inputminted[breaklines]{python}{#1}\end{pyc}}
+
+
+
+%
+% Autre
+%
+\newenvironment{algo}{\VerbatimEnvironment\begin{modulbox}{bleufonce@color}{Algorithme}\begin{minted}[breaklines]{pseudocode}}{\end{minted}\end{modulbox}}
+\newenvironment{html}{\VerbatimEnvironment\begin{modulbox}{vertfonce@color}{Code HTML}\begin{minted}[breaklines]{html}}{\end{minted}\end{modulbox}}
+\newenvironment{javascript}{\VerbatimEnvironment\begin{modulbox}{orange@color}{Code JavaScript}\begin{minted}[breaklines]{javascript}}{\end{minted}\end{modulbox}}
+\newenvironment{cpp}{\VerbatimEnvironment\begin{modulbox}{bleufonce@color}{Code C++}\begin{minted}[breaklines]{c++}}{\end{minted}\end{modulbox}}
+\newenvironment{clang}{\VerbatimEnvironment\begin{modulbox}{bleufonce@color}{Code C}\begin{minted}[breaklines]{c}}{\end{minted}\end{modulbox}}
+\newenvironment{sql}{\VerbatimEnvironment\begin{modulbox}{vertfonce@color}{Code SQL}\begin{minted}[breaklines]{sql}}{\end{minted}\end{modulbox}}
+
+
+

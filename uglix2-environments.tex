@@ -1,0 +1,179 @@
+% uglix v0.2
+%
+% 2020-07
+%
+%
+% COMMANDES D'ENVIRONNEMENTS
+
+\renewenvironment{leftbar}[1][\hsize]
+{
+  \def\FrameCommand
+    {%
+        {\color{chapter@color}\vrule width 1pt}%
+        \hspace{0pt}%must no space.
+        \fboxsep=\FrameSep\colorbox{white}%
+    }%
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
+\newenvironment{demonstration}
+     {\textbf{Preuve:}\begin{leftbar}}
+     {\hfill$\blacksquare$\end{leftbar}}
+%
+\geometry{scale=.75}
+% Macro to draw the shape behind the text, when it fits completly in the
+% page
+\newcommand*\parchmentframe[1]{%
+	\tikz{%
+		\node[inner sep=1ex] (A) {#1};  % Draw the text of the node
+		\begin{scope}[on background layer]  % Draw the shape behind
+			\fill[normal border] (A.south east) -- (A.south west) -- (A.north west) -- (A.north east) -- cycle;
+		\end{scope}
+	}%
+}
+% Macro to draw the shape, when the text will continue in next page
+\newcommand*\parchmentframetop[1]{%
+	\tikz{%
+		\node[inner sep=1ex] (A) {#1};    % Draw the text of the node
+		\begin{scope}[on background layer]
+			\fill[normal border]              % Draw the ``complete shape'' behind
+			(A.south east) -- (A.south west) -- (A.north west) -- (A.north east) -- cycle;
+			\fill[torn border]                % Add the torn lower border
+			($(A.south east)-(0,.2)$) -- ($(A.south west)-(0,.2)$) -- ($(A.south west)+(0,.2)$) -- ($(A.south east)+(0,.2)$) -- cycle;
+		\end{scope}
+	}%
+}
+% Macro to draw the shape, when the text continues from previous page
+\newcommand*\parchmentframebottom[1]{%
+	\tikz{%
+		\node[inner sep=1ex] (A) {#1};   % Draw the text of the node
+		\begin{scope}[on background layer]
+			\fill[normal border]             % Draw the ``complete shape'' behind
+			(A.south east) -- (A.south west) -- (A.north west) -- (A.north east) -- cycle;
+			\fill[torn border]               % Add the torn upper border
+			($(A.north east)-(0,.2)$) -- ($(A.north west)-(0,.2)$) -- ($(A.north west)+(0,.2)$) -- ($(A.north east)+(0,.2)$) -- cycle;
+		\end{scope}
+	}%
+}
+% Macro to draw the shape, when both the text continues from previous page
+% and it will continue in next page
+\newcommand*\parchmentframemiddle[1]{%
+	\tikz{%
+		\node[inner sep=1ex] (A) {#1};   % Draw the text of the node
+		\begin{scope}[on background layer]
+			\fill[normal border]             % Draw the ``complete shape'' behind
+			(A.south east) -- (A.south west) -- (A.north west) -- (A.north east) -- cycle;
+			\fill[torn border]               % Add the torn lower border
+			($(A.south east)-(0,.2)$) -- ($(A.south west)-(0,.2)$) -- ($(A.south west)+(0,.2)$) -- ($(A.south east)+(0,.2)$) -- cycle;
+			\fill[torn border]               % Add the torn upper border
+			($(A.north east)-(0,.2)$) -- ($(A.north west)-(0,.2)$) -- ($(A.north west)+(0,.2)$) -- ($(A.north east)+(0,.2)$) -- cycle;
+		\end{scope}
+	}%
+}
+%________________________________
+%
+% --- Environnement Modulable
+
+\newenvironment{modulbox}[2]% #1 : color #2 : title
+{
+	\tikzset{
+		normal border/.style={#1!15},
+		torn border/.style={#1!15,decorate, decoration={random steps,segment length=.2cm,amplitude=1pt}},
+	}
+	\def\FrameCommand{\parchmentframe}%
+	\def\FirstFrameCommand{\parchmentframetop}%
+	\def\LastFrameCommand{\parchmentframebottom}%
+	\def\MidFrameCommand{\parchmentframemiddle}%
+	\vskip\baselineskip
+	\MakeFramed {\advance\hsize-\width\FrameRestore}%
+	\noindent\tikz{\node[inner sep=1ex, rounded corners=2pt,draw=#1,fill=#1, anchor=west, overlay] at ( 0ex, 1ex) 
+	{\color{white} \titlefont #2};}\par\vspace*{.5em}
+}
+{
+%\vspace*{.5em}
+\endMakeFramed}
+
+% --- Environnement Modulable avec icone
+
+
+\newenvironment{modulboxg}[3]% #1 : color #2 : title
+{
+	\tikzset{
+		normal border/.style={#1!15},
+		torn border/.style={#1!15,decorate, decoration={random steps,segment length=.2cm,amplitude=1pt}},
+	}
+	\def\FrameCommand{\parchmentframe}%
+	\def\FirstFrameCommand{\parchmentframetop}%
+	\def\LastFrameCommand{\parchmentframebottom}%
+	\def\MidFrameCommand{\parchmentframemiddle}%
+	\vskip\baselineskip
+	\MakeFramed {\advance\hsize-\width\FrameRestore}%
+	\noindent\tikz
+	{
+		\node[inner sep=1ex, rounded corners=2pt,draw=#1,fill=#1, anchor=west, overlay] at ( 0ex, .8ex) 
+			{\color{#1}\hspace*{3.8ex}\titlefont #2};
+		\node[overlay] at ( 2ex, .8ex) {\includegraphics[height=1.8em]{#3}};
+		\node[overlay,anchor=west] at ( 3.8ex, .6ex) {\color{white}\titlefont #2};
+	}\par\vspace*{.5em}
+}
+{
+	%\vspace*{.5em}
+	\endMakeFramed}
+
+% --- Environnements DIVERS
+
+\newenvironment{corrige}[1][Réponse]{\begin{modulbox}{gray}{#1}}{\end{modulbox}}
+\newenvironment{encadre}[1][]{\begin{modulbox}{gray}{#1}}{\end{modulbox}}
+\newenvironment{encadrecolore}[2]{\begin{modulbox}{#2}{#1}}{\end{modulbox}}
+
+
+% --- Environnements DIVERS CODES
+
+
+
+
+
+
+\newenvironment{pseudocode}{\begin{modulbox}{UGLiGreen}{Langage naturel}}{\end{modulbox}}
+\newenvironment{asm}{\begin{modulbox}{bleufonce@color}{Code Assembleur}}{\end{modulbox}}
+
+
+
+
+% --- Environnements DIVERS COURS
+
+\newenvironment{aretenir}{\begin{modulbox}{UGLiGreen}{À retenir}}{\end{modulbox}}
+\newenvironment{attention}{\begin{modulbox}{UGLiRed}{Attention}}{\end{modulbox}}
+
+
+
+\newenvironment{notation}[1][]{\begin{modulbox}{def@color}{Notation#1}}{\end{modulbox}}
+\newenvironment{definition}[1][]{\begin{modulbox}{def@color}{Définition#1}}{\end{modulbox}}
+\newenvironment{propriete}[1][]{\begin{modulbox}{prop@color}{Propriété#1}}{\end{modulbox}}
+\newenvironment{methode}[1][]{\begin{modulbox}{meth@color}{Méthode#1}}{\end{modulbox}}
+\newenvironment{remarque}[1][]{\begin{modulbox}{rem@color}{Remarque#1}}{\end{modulbox}}
+\newenvironment{theoreme}[1][]{\begin{modulbox}{thm@color}{Théorème#1}}{\end{modulbox}}
+\newenvironment{exemple}[1][]{\begin{modulbox}{exe@color}{Exemple#1}}{\end{modulbox}}
+\newenvironment{consequence}[1][]{\begin{modulbox}{subsection@color}{Conséquence#1}}{\end{modulbox}}
+\newcounter{exonumber}
+\setcounter{exonumber}{0}
+\newenvironment{exercice}[1][]{\stepcounter{exonumber}\begin{modulbox}{exo@color}{Exercice \theexonumber #1
+}}{\end{modulbox}}
+\newcounter{correcnumber}
+\setcounter{correcnumber}{0}
+\newenvironment{correction}[1][]{\stepcounter{correcnumber}\begin{modulbox}{vertfonce@color}{Corrigé de l'exercice \thecorrecnumber #1
+}}{\end{modulbox}}
+
+%
+%
+% --- Environnement  Enoncé : triggers
+%
+\newif\ifshowenonce
+\showenoncetrue
+\newenvironment{enonce}{\ifshowenonce\else\comment\fi}{\ifshowenonce\else\endcomment\fi}
+\def\afficheEnonce{\showenoncetrue}
+\def\cacheEnonce{\showenoncefalse}
+
+% --- CorrigeCache
+
+\newcommand{\corrigeCache}{\renewenvironment{corrige}{\comment}{\endcomment}}
