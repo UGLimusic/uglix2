@@ -1,7 +1,7 @@
 % uglix v0.2
 %
 % 2020-07
-% 
+%
 %
 % commandes indépendantes des librairies, ou dépendantes de librairies communes à toutes les options
 %
@@ -25,20 +25,20 @@
 \newcommand\pce[4]{\textrm{#1}\left( #2 \ ; \ #3 \ ; \ #4 \right)}					% Idem dans l'espace
 \newcommand\pcfe[1]{\pc{#1}{x_{#1}}{y_{#1}}{z_{#1}}}								% Idem
 
-\newcommand\anglo[2]{\left( \vv{#1}  , \ \vv{#2} \right)}							% Angle orienté
+
 \newcommand\vc[3]{\vv{#1}\begin{pmatrice} #2 \\ #3 \end{pmatrice}}					% Vecteur du plan et coordonnées
 \newcommand\vce[4]{\vv{#1}\begin{pmatrice} #2 \\ #3 \\ #4 \end{pmatrice}}			% Vecteur de l'espace et coordonnées
 \newcommand\cc[2]{\begin{pmatrice} #1 \\ #2 \end{pmatrice}}							% Coordonnées colonne
 \newcommand\cce[3]{\begin{pmatrice} #1 \\ #2 \\ #3 \end{pmatrice}}					% Idem espace
 \newcommand\norme[1]{\| \vv{#1} \|}													% Norme
 \newcommand\ps[2]{\ensuremath{\vv{#1}\cdot\vv{#2}}}									% Produit scalaire de deux vecteurs du plan
-
+\newcommand\anglo[2]{\left( \vv{#1}  , \ \vv{#2} \right)}							% Angle orienté
 \newcommand\N{\ensuremath{\mathbf{N}}} 												% Naturels
 \newcommand\Z{\ensuremath{\mathbf{Z}}} 												% Relatifs
-%\newcommand\D{\ensuremath{\mathbf{D}}} 												% Décimaux
-\newcommand\Q{\ensuremath{\mathbf{Q}}}  												% Rationnels
+\newcommand\D{\ensuremath{\mathbf{D}}} 												% Décimaux
+\newcommand\Q{\ensuremath{\mathbf{Q}}}  											% Rationnels
 \newcommand\R{\ensuremath{\mathbf{R}}} 												% Réels
-
+\newcommand\C{\ensuremath{\mathbf{C}}}
 
 \newcommand\oio[2]{\left]#1\ ;\ #2\right[}											% Intervalle borné ouvert
 \newcommand\oif[2]{\left]#1\ ;\ #2\right]}											% Intervalle borné semi-ouvert semi-fermé
@@ -52,16 +52,16 @@
 \newcommand{\e}{\textrm{e}}															% exponentielle
 \newcommand\courbe[1]{\ensuremath{\mathcal{C}_{#1}}}								% C_f
 
-\newcommand\bis{$^{\textrm{\footnotesize bis}}$}										% Bis
+\newcommand\bis{$^{\textrm{\footnotesize bis}}$}									% Bis
 \newcommand\eme{$^{\textrm{e}}$\ }                                                  % ème
-\newcommand{\er}{$^{\textrm{er}}$\ }                                                    % er
-\newcommand{\ere}{$^{\textrm{re}}$\ }                                                  % ère
-\newcommand\seconde{2$^{\textrm{nde}}$}                                               % 2nde
-\newcommand\premiereS{1$^{\textrm{ère}}$ S}                                           % 1S
-\newcommand\premiereSTMG{1$^{\textrm{ère}}$ STMG}                                     % 1STMG
-\newcommand\terminaleES{T$^{\textrm{ale}}$ ES}                                        % TES
+\newcommand{\er}{$^{\textrm{er}}$\ }                                                % er
+\newcommand{\ere}{$^{\textrm{re}}$\ }                                               % ère
+\newcommand\seconde{2$^{\textrm{nde}}$}                                             % 2nde
+\newcommand\premiere{1$^{\textrm{ère}}$}                                           	% 1
+\newcommand\premiereSTMG{1$^{\textrm{ère}}$ STMG}                                   % 1STMG
+\newcommand\terminale{T$^{\textrm{ale}}$}                                           % Term
 
-\newcommand{\bareme}[1]{\hfill {\scriptsize(#1)}}                 % Barème
+\newcommand{\bareme}[1]{\hfill {\scriptsize(#1)}}                                   % Barème
 
 %_____________________________________________________________________________________________________________________________________________________________________________
 
@@ -156,7 +156,7 @@
            \tw@
            {#2}%
            {#4}}}
-           
+
  \def\@testopt#1#2{%
   \@ifnextchar[{#1}{#1[#2]}}
 \def\@protected@testopt#1{%%
@@ -165,7 +165,7 @@
   \else
     \@x@protect#1%
   \fi}
-  
+
 \long\def\@yargdef#1#2#3{%
   \@tempcnta#3\relax
   \advance \@tempcnta \@ne
@@ -180,7 +180,7 @@
   \l@ngrel@x\expandafter\def\expandafter#1\reserved@a}
 \long\def\@reargdef#1[#2]#3{%
   \@yargdef#1\@ne{#2}{#3}}
-  
+
  \def\renewcommand{\@star@or@long\renew@command}
 \def\renew@command#1{%
   {\escapechar\m@ne\xdef\@gtempa{{\string#1}}}%
@@ -234,7 +234,7 @@
 \def\input{\@ifnextchar\bgroup\@iinput\@@input}
 \def\@iinput#1{\@@input#1 }
 
-\input{colordvi.tex}   
+\input{colordvi.tex}
 
 \newbox\nb@box
 \newcount\nb@a
@@ -271,5 +271,5 @@
       \expandafter\expandafter\expandafter\afficheresultat@
    \else
       \expandafter\@gobble
-   \fi{\number\numexpr#1-1}} 
-\makeatother 
+   \fi{\number\numexpr#1-1}}
+\makeatother

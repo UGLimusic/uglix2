@@ -72,7 +72,7 @@
 		\shade [left  color = gray!50!white,right color = white, shading angle = 75]
 					(0,0) -- (\columnwidth,0) -- (\columnwidth,2em) -- (0,2em) -- cycle ;
 		\draw (.5em,1em)  node[right]{\titlefont\Large Exercice\ \theexoNum\ \normalsize{#1}};
-		
+
 	\end{tikzpicture}
 	}
 \newcommand{\exoN}[1]
@@ -80,7 +80,7 @@
 	\addtocounter{exoNum}{1}
 	{\titlefont\color{bleufonce@color}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip
 	}
-	
+
 %_____________________________________________________________________________________________________________________________________________________________________________
 %
 \newcommand{\exonote}[1]
@@ -187,11 +187,12 @@
 %
 \newcommand{\reperecl}[6] %(xmin,ymin,xmax,ymax,xlabel,ylabel)
 	{
-	\draw [thin, quadrillage@color(#1,#2) grid (#3,#4);
-	\draw [->,>=latex, thick] (#1,0) -- (#3,0) ;
-	\draw (#3,0) node[below left]{\footnotesize #5};
-	\draw [->,>=latex, thick] (0,#2) -- (0,#4);
-	\draw (0,#4) node[rotate = 90, above left]{\footnotesize #6};
+
+\draw [thin, quadrillage@color](#1,#2) grid (#3,#4);
+\draw [->,>=latex, thick] (#1,0) -- (#3,0) ;
+\draw (#3,0) node[below left]{\footnotesize #5};
+\draw [->,>=latex, thick] (0,#2) -- (0,#4);
+\draw (0,#4) node[rotate = 90, above left]{\footnotesize #6};
 	}
 %_____________________________________________________________________________________________________________________________________________________________________________
 %
@@ -217,7 +218,7 @@
 %
 \newcommand{\pointx}[3] %(x,y,name)
 	{
-	\draw [thick, pointilles@color, dashed](#1,0) -- (#1,#2) -- (0,#2);	
+	\draw [thick, pointilles@color, dashed](#1,0) -- (#1,#2) -- (0,#2);
 	\ifthenelse{\( \lengthtest{#1 cm > 0 cm } \) \AND \( \lengthtest{#2 cm >0 cm } \)}
 		{\draw (#1,#2) node[above right]{#3};}
 		{}
@@ -323,7 +324,7 @@
 %
 \newcommand{\secteur}[3]   % {x,y,angledepart,anglefin}
 	{
-	\draw (#1) -- ++(#2:.2) arc (#2:#3:.2)
+	\draw (#1)  ++(#2:.2) arc (#2:#3:.2);
 	}
 %_____________________________________________________________________________________________________________________________________________________________________________
 %
@@ -340,15 +341,23 @@
 	\end{tikzpicture}
 }
 
+\newcommand{\petitscarreaux}[2]
+{
+    \begin{tikzpicture}
+        \draw[fill = white](0,0) rectangle (#1,#2);
+        \draw[quadrillage@color!70,step=.5,ystep=.5](0,0) grid (#1,#2);
+    \end{tikzpicture}
+}
+
 %_____________________________________________________________________________________________________________________________________________________________________________
 %
 \newcommand{\arbreproba}%arbre type bac tes {A}{B}{C}
 {\begin{tikzpicture}[grow = right,level distance=8em,level 1/.style={sibling distance=7em},
 level 2/.style={sibling distance=3em}]
 \node {}
- child {node {\abdeux} child {node {\absix} edge from parent node[below=.5em] {\alsix}} child {node {\abcinq}edge from parent node[above=.5em] 
+ child {node {\abdeux} child {node {\absix} edge from parent node[below=.5em] {\alsix}} child {node {\abcinq}edge from parent node[above=.5em]
  {\alcinq}}edge from parent node[below=.5em] {\aldeux}}
- child {node {\abun} child {node {\abquatre} edge from parent node[below=.5em] {\alquatre}} child {node {\abtrois}edge from parent node[above=.5em] 
+ child {node {\abun} child {node {\abquatre} edge from parent node[below=.5em] {\alquatre}} child {node {\abtrois}edge from parent node[above=.5em]
  {\altrois}}edge from parent node[above=.5em] {\alun}};
 \end{tikzpicture}}
 

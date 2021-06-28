@@ -1,0 +1,120 @@
+% uglix v0.2
+%
+% 2020-07
+%
+% PARTIE SPECIFIQUE A LA CLASSE ARTICLE
+
+%---------Pages
+
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\begin{tikzpicture}
+  	%\node (shadow) {};
+  	\node[rounded corners=2pt,fill=pagenumber@color,inner ysep=5pt, inner xsep=2ex,text=white] at (0,0) %at ($(shadow)+(-2pt,2pt)$)
+  	{\titlefont\thepage};
+  	\end{tikzpicture}} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\setlength{\footskip}{40pt}
+\pagestyle{plain}
+
+
+%------------creative commons header
+\newcommand\creativecommonsheader{\vspace*{\fill}
+\begin{minipage}{\textwidth}\vspace*{3em}
+\rule{\textwidth}{0.4pt}\vspace*{1em}
+\double{\textit{Ce document est mis à disposition selon les termes de la licence Creative Commons « Attribution - Pas d’utilisation commerciale -
+Partage
+dans les
+mêmes conditions 3.0 non transposé ».}}{\includegraphics[width=6cm]{C:/texlive/2020/texmf-dist/tex/latex/uglix/images/cc.png}}{6cm}
+%/usr/local/texlive/2019/texmf-dist/tex/latex/UGLiLuaLaTeX/cc.png
+\end{minipage}
+\fancyfoot[R]{}
+}
+%------------creative commons footer
+
+\newcommand\creativecommonsfooter{
+\fancypagestyle{plain}{
+	\fancyfoot[L]{\ \\[-1.3em]\tiny\color{lightgray}Lycée Rabelais - Saint Brieuc}
+\fancyfoot[R]{\includegraphics[width=2cm]{C:/texlive/2020/texmf-dist/tex/latex/uglix/images/cc.png}}
+%/usr/local/texlive/2020/texmf-dist/tex/latex/UGLiLuaLaTeX/cc.png
+\fancyfoot[C]{\begin{tikzpicture}
+  	\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\titlefont\thepage};
+  	\node[rounded corners=3pt,fill=pagenumber@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-2pt,2pt)$)
+  	{\titlefont\thepage};
+  	\end{tikzpicture}} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\setlength{\footskip}{40pt}
+\pagestyle{plain}}
+
+%-------------LONGUEURS
+
+\newlength\decalnumsec\setlength{\decalnumsec}{-0.6em}
+
+\newlength\decalnumsubsec\setlength{\decalnumsubsec}{-0.4em}
+\newlength\decalxtitlesubsec\setlength{\decalxtitlesubsec}{.53em}
+
+\newlength\decalnumsubsubsec\setlength{\decalnumsubsubsec}{-0.33em}
+\newlength\decalxtitlesubsubsec\setlength{\decalxtitlesubsubsec}{.67em}
+
+%-------------FORMATAGE NUMERATION
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\setcounter{secnumdepth}{3}
+
+%-------------FORMATAGE SECTIONS
+
+%--Sections
+\titleformat{\section}[block]
+{\LARGE\titlefont\color{section@color}}
+{\hspace*{-.5em}
+	\raisebox{\decalnumsec}
+	{
+		\begin{tikzpicture}
+			\node (numsec) {\LARGE\titlefont\thesection};
+			\fill[rounded corners=2pt,fill=section@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) --
+			($(numsec.south
+			west)$) -- cycle;
+			\node[white] at (numsec) {\LARGE\titlefont\thesection};
+		\end{tikzpicture}
+	}
+}
+{0pt}
+{}
+
+%--Subsections
+\titleformat{\subsection}[block]
+{\hspace*{\decalxtitlesubsec}\large\titlefont\color{subsection@color}}
+{\hspace*{-.7em}
+	\raisebox{\decalnumsubsec}
+	{%
+	\begin{tikzpicture}
+	\node (numsec) {\large\titlefont\thesubsection};
+	\fill[rounded corners=2pt,fill=subsection@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) --
+	($(numsec.south west)$) -- cycle;
+	\node[white] at (numsec) {\large\titlefont\thesubsection};
+	\end{tikzpicture}
+	}
+}
+{0pt}
+{}
+
+%--Subsubsections
+\titleformat{\subsubsection}[block]
+{\hspace*{\decalxtitlesubsubsec}\titlefont\color{subsubsection@color}}
+{\hspace*{-.9em}
+\raisebox{\decalnumsubsubsec}
+{%
+\begin{tikzpicture}
+\node (numsec) {\normalsize\titlefont\thesubsubsection};
+\fill[rounded corners=2pt,fill=subsubsection@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) --
+($(numsec.south west)$) -- cycle;
+\node[white] at (numsec) {\normalsize\titlefont\thesubsubsection};
+\end{tikzpicture}
+}
+}
+{0pt}
+{}

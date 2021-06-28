@@ -120,33 +120,12 @@
 	%\vspace*{.5em}
 	\endMakeFramed}
 
-% --- Environnements DIVERS
-
-\newenvironment{corrige}[1][Réponse]{\begin{modulbox}{gray}{#1}}{\end{modulbox}}
-\newenvironment{encadre}[1][]{\begin{modulbox}{gray}{#1}}{\end{modulbox}}
-\newenvironment{encadrecolore}[2]{\begin{modulbox}{#2}{#1}}{\end{modulbox}}
-
-
-% --- Environnements DIVERS CODES
-
-
-
-
-
-
-\newenvironment{pseudocode}{\begin{modulbox}{UGLiGreen}{Langage naturel}}{\end{modulbox}}
-\newenvironment{asm}{\begin{modulbox}{bleufonce@color}{Code Assembleur}}{\end{modulbox}}
-
-
 
 
 % --- Environnements DIVERS COURS
 
 \newenvironment{aretenir}{\begin{modulbox}{UGLiGreen}{À retenir}}{\end{modulbox}}
 \newenvironment{attention}{\begin{modulbox}{UGLiRed}{Attention}}{\end{modulbox}}
-
-
-
 \newenvironment{notation}[1][]{\begin{modulbox}{def@color}{Notation#1}}{\end{modulbox}}
 \newenvironment{definition}[1][]{\begin{modulbox}{def@color}{Définition#1}}{\end{modulbox}}
 \newenvironment{propriete}[1][]{\begin{modulbox}{prop@color}{Propriété#1}}{\end{modulbox}}
@@ -155,25 +134,43 @@
 \newenvironment{theoreme}[1][]{\begin{modulbox}{thm@color}{Théorème#1}}{\end{modulbox}}
 \newenvironment{exemple}[1][]{\begin{modulbox}{exe@color}{Exemple#1}}{\end{modulbox}}
 \newenvironment{consequence}[1][]{\begin{modulbox}{subsection@color}{Conséquence#1}}{\end{modulbox}}
+
+
+% --- Environnements DIVERS
+
+
+\newenvironment{encadre}[1][]{\begin{modulbox}{gray}{#1}}{\end{modulbox}}
+\newenvironment{encadrecolore}[2]{\begin{modulbox}{#2}{#1}}{\end{modulbox}}
+
+% --- Exos et correc
+
 \newcounter{exonumber}
 \setcounter{exonumber}{0}
 \newenvironment{exercice}[1][]{\stepcounter{exonumber}\begin{modulbox}{exo@color}{Exercice \theexonumber #1
 }}{\end{modulbox}}
 \newcounter{correcnumber}
 \setcounter{correcnumber}{0}
+
+\newenvironment{exercicecorrection}[1][]{\stepcounter{correcnumber}\begin{modulbox}{vertfonce@color}{Corrigé de l'exercice \thecorrecnumber #1
+	}}{\end{modulbox}}
+
+
+% gardé pour compatibilité
 \newenvironment{correction}[1][]{\stepcounter{correcnumber}\begin{modulbox}{vertfonce@color}{Corrigé de l'exercice \thecorrecnumber #1
 }}{\end{modulbox}}
 
 %
 %
-% --- Environnement  Enoncé : triggers
+% --- Environnement  Enoncé
 %
-\newif\ifshowenonce
-\showenoncetrue
-\newenvironment{enonce}{\ifshowenonce\else\comment\fi}{\ifshowenonce\else\endcomment\fi}
-\def\afficheEnonce{\showenoncetrue}
-\def\cacheEnonce{\showenoncefalse}
 
-% --- CorrigeCache
+\excludecomment{enonce}
+\newcommand{\cacheEnonce}{\excludecomment{enonce}}
+\newcommand{\afficheEnonce}{\includecomment{enonce}}
 
-\newcommand{\corrigeCache}{\renewenvironment{corrige}{\comment}{\endcomment}}
+
+% --- Corrige
+
+\excludecomment{corrige}
+\newcommand{\cacheCorrige}{\excludecomment{corrige}}
+\newcommand{\afficheCorrige}{\includecomment{corrige}}

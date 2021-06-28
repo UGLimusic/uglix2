@@ -15,10 +15,8 @@
 \RequirePackage{amssymb}
 \RequirePackage{unicode-math}
 
-\setmathfont{Fira Math}
-\setmathfont{XITS Math}[range={\vdots,\ddots,\setminus,\bigtimes,\preceq,\star,\bigstar}]
+
 \setmonofont{Fira Mono}
-\DeclareMathAlphabet{\mathcal}{OMS}{cmbrs}{m}{n}
 \newif\if@thinfonts \@thinfontsfalse
 \DeclareOption{thinfonts}{\@thinfontstrue}
 
@@ -26,14 +24,17 @@
 \DeclareOption*{}
 \ProcessOptions
 
-\if@thinfonts
-    \setmainfont[BoldFont=Fira Sans Regular]{Fira Sans Light}	
-    \setfontfamily{\titlefont}{Fira Sans Bold}
-\else
-    \setmainfont{Fira Sans}	
-    \setfontfamily{\titlefont}{Fira Sans ExtraBold}
-\fi
+	\if@thinfonts
+    	\setmainfont[BoldFont=Fira Sans]{Fira Sans Light}
+	    \setfontfamily{\titlefont}{Fira Sans Bold}
+	\else
+    	\setmainfont{Fira Sans Book}
+    	\setfontfamily{\titlefont}{Fira Sans ExtraBold}
+	\fi
 
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmbrs}{m}{n}
+%\setmathfont{Latin Computer Modern}
 \setmathfont{Fira Math}
 \setmathfont{XITS Math}[range={\vdots,\ddots,\setminus,\bigtimes,\preceq,\star,\bigstar}]
 
@@ -83,6 +84,7 @@
 %------- environments
 
 \RequirePackage{framed}
+\RequirePackage{comment} % to hide environnements
 \input{uglix2-environments.tex}
 
 
@@ -94,25 +96,24 @@
 
 
 \makeatletter
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
 
 	%------- book class
 
 
 	\@ifclassloaded{book}
 		{
-		\RequirePackage{titlesec}
-		\RequirePackage{fancyhdr}
+
 		\input{uglix2-book.tex}
-		\renewcommand\C{\ensuremath{\mathbf{C}}} 												% Complexes
 		}
 		{}
-	
+
 	%------- article class
-	
+
 	\@ifclassloaded{article}
 		{
-		\pagestyle{empty}	
-		\renewcommand\C{\ensuremath{\mathbf{C}}} 												% Complexes
+		\input{uglix2-article.tex}
 		}
 		{}
 \makeatother
