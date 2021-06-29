@@ -47,6 +47,7 @@
 \begin{enonce}#n
 \begin{exemple}#n
 \begin{exercice}#n
+\begin{exercicecorrection}#n
 \begin{html}#V
 \begin{javascript}#V
 \begin{methode}#n
@@ -99,6 +100,7 @@
 \end{enonce}#n
 \end{exemple}#n
 \end{exercice}#n
+\end{exercicecorrection}#n
 \end{html}#V
 \end{javascript}#V
 \end{methode}#n
