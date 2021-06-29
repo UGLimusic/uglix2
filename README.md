@@ -11,3 +11,7 @@ Remember to
 
 - `thinfonts` : use Fira Sans Light instead of Fira Sans
 - `latinmath` : use Latin Modern Math instead of Fira Sans Math
+
+## Extras
+
+- Macros & Templates for TeXstudio
