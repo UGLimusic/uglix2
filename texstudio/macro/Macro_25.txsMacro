@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Encadré générique | :gen",
+    "shortcut": "",
+    "tag": [
+        "\\begin{encadrecolore}{%<texte%>}{%<couleur%>}",
+        "\t%< %>",
+        "\\end{encadrecolore}"
+    ],
+    "trigger": ":gen"
+}

@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Attention | :att",
+    "shortcut": "",
+    "tag": [
+        "%attention"
+    ],
+    "trigger": ":att"
+}

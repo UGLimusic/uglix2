@@ -10,7 +10,7 @@
 \fancyhf{} % clear all header and footer fields
 \fancyfoot[C]{\begin{tikzpicture}
   	%\node (shadow) {};
-  	\node[rounded corners=2pt,fill=pagenumber@color,inner ysep=5pt, inner xsep=2ex,text=white] at (0,0) %at ($(shadow)+(-2pt,2pt)$) 
+  	\node[rounded corners=2pt,fill=pagenumber@color,inner ysep=5pt, inner xsep=2ex,text=white] at (0,0) %at ($(shadow)+(-2pt,2pt)$)
   	{\titlefont\thepage};
   	\end{tikzpicture}} % except the center
 \renewcommand{\headrulewidth}{0pt}
@@ -23,11 +23,11 @@
 \newcommand\creativecommonsheader{\vspace*{\fill}
 \begin{minipage}{\textwidth}\vspace*{3em}
 \rule{\textwidth}{0.4pt}\vspace*{1em}
-\double{\textit{Ce document est mis à disposition selon les termes de la licence Creative Commons « Attribution - Pas d’utilisation commerciale - 
-Partage 
-dans les 
-mêmes conditions 3.0 non transposé ».}}{\includegraphics[width=6cm]{C:/texlive/2020/texmf-dist/tex/latex/uglix/images/cc.png}}{6cm}
-%/usr/local/texlive/2019/texmf-dist/tex/latex/UGLiLuaLaTeX/cc.png
+\double{\textit{Ce document est mis à disposition selon les termes de la licence Creative Commons « Attribution - Pas d’utilisation commerciale -
+Partage
+dans les
+mêmes conditions 3.0 non transposé ».}}{\includegraphics[width=6cm]\uglipath/cc.png}{6cm}
+
 \end{minipage}
 \fancyfoot[R]{}
 }
@@ -36,11 +36,11 @@ mêmes conditions 3.0 non transposé ».}}{\includegraphics[width=6cm]{C:/texl
 \newcommand\creativecommonsfooter{
 \fancypagestyle{plain}{
 	\fancyfoot[L]{\ \\[-1.3em]\tiny\color{lightgray}Lycée Rabelais - Saint Brieuc}
-\fancyfoot[R]{\includegraphics[width=2cm]{C:/texlive/2020/texmf-dist/tex/latex/uglix/images/cc.png}}
-%/usr/local/texlive/2020/texmf-dist/tex/latex/UGLiLuaLaTeX/cc.png
+\fancyfoot[R]{\includegraphics[width=2cm]{\uglipath/cc.png}}
+
 \fancyfoot[C]{\begin{tikzpicture}
   	\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\titlefont\thepage};
-  	\node[rounded corners=3pt,fill=pagenumber@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-2pt,2pt)$) 
+  	\node[rounded corners=3pt,fill=pagenumber@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-2pt,2pt)$)
   	{\titlefont\thepage};
   	\end{tikzpicture}} % except the center
 \renewcommand{\headrulewidth}{0pt}
@@ -72,7 +72,7 @@ mêmes conditions 3.0 non transposé ».}}{\includegraphics[width=6cm]{C:/texl
 
 %Intro
 %
-\newcommand{\introduction}[1]{\vspace*{-4em}\begin{flushright} \tikz{\draw[bleufonce@color!50] (0,0) 
+\newcommand{\introduction}[1]{\vspace*{-4em}\begin{flushright} \tikz{\draw[bleufonce@color!50] (0,0)
 node{\textit{\footnotesize«#1»}};}\end{flushright}}
 %
 
@@ -108,8 +108,8 @@ node{\textit{\footnotesize«#1»}};}\end{flushright}}
 	{
 		\begin{tikzpicture}
 			\node (numsec) {\LARGE\titlefont\thesection};
-			\fill[rounded corners=2pt,fill=section@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) -- 
-			($(numsec.south 
+			\fill[rounded corners=2pt,fill=section@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) --
+			($(numsec.south
 			west)$) -- cycle;
 			\node[white] at (numsec) {\LARGE\titlefont\thesection};
 		\end{tikzpicture}
@@ -126,7 +126,7 @@ node{\textit{\footnotesize«#1»}};}\end{flushright}}
 	{%
 	\begin{tikzpicture}
 	\node (numsec) {\large\titlefont\thesubsection};
-	\fill[rounded corners=2pt,fill=subsection@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) -- 
+	\fill[rounded corners=2pt,fill=subsection@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) --
 	($(numsec.south west)$) -- cycle;
 	\node[white] at (numsec) {\large\titlefont\thesubsection};
 	\end{tikzpicture}
@@ -143,7 +143,7 @@ node{\textit{\footnotesize«#1»}};}\end{flushright}}
 {%
 \begin{tikzpicture}
 \node (numsec) {\normalsize\titlefont\thesubsubsection};
-\fill[rounded corners=2pt,fill=subsubsection@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) -- 
+\fill[rounded corners=2pt,fill=subsubsection@color] (numsec.north west) -- ($(numsec.north east)$) -- (numsec.south east) --
 ($(numsec.south west)$) -- cycle;
 \node[white] at (numsec) {\normalsize\titlefont\thesubsubsection};
 \end{tikzpicture}

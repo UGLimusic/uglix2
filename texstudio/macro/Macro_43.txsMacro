@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Et cætera | :etc",
+    "shortcut": "",
+    "tag": [
+        "\\textit{et c\\ae tera}"
+    ],
+    "trigger": ":etc"
+}

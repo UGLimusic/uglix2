@@ -17,8 +17,12 @@
 
 
 \setmonofont{Fira Mono}
+
 \newif\if@thinfonts \@thinfontsfalse
 \DeclareOption{thinfonts}{\@thinfontstrue}
+
+\newif\if@latinmath \@latinmathfalse
+\DeclareOption{latinmath}{\@latinmathtrue}
 
 
 \DeclareOption*{}
@@ -32,11 +36,13 @@
     	\setfontfamily{\titlefont}{Fira Sans ExtraBold}
 	\fi
 
-
-\DeclareMathAlphabet{\mathcal}{OMS}{cmbrs}{m}{n}
-%\setmathfont{Latin Computer Modern}
-\setmathfont{Fira Math}
-\setmathfont{XITS Math}[range={\vdots,\ddots,\setminus,\bigtimes,\preceq,\star,\bigstar}]
+    \if@latinmath
+        \setmathfont{Latin Modern Math}
+    \else
+        \DeclareMathAlphabet{\mathcal}{OMS}{cmbrs}{m}{n}
+        \setmathfont{Fira Math}
+        \setmathfont{XITS Math}[range={\vdots,\ddots,\setminus,\bigtimes,\preceq,\star,\bigstar}]
+    \fi
 
 %------- general formatting
 
@@ -94,10 +100,11 @@
 \input{uglix2-prog.tex}
 
 
-
+%-------- classes
 \makeatletter
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
+\def\uglipath{C:/texlive/2021/texmf-dist/tex/latex/uglix2/img}
 
 	%------- book class
 

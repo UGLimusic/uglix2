@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Conséquence | :con",
+    "shortcut": "",
+    "tag": [
+        "\\begin{consequence}[%< %>]",
+        "%< %>",
+        "\\end{consequence}"
+    ],
+    "trigger": ":con"
+}

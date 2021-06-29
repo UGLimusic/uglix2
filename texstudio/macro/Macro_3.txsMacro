@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Liste numérotée 1. | :enum1",
+    "shortcut": "",
+    "tag": [
+        "\\begin{enumerate}[\\bfseries 1.]",
+        "\t\\item \t%< %>",
+        "\t\\item \t%< %>\t",
+        "\\end{enumerate}"
+    ],
+    "trigger": ":enum1"
+}

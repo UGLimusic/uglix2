@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Exercice - corrigé | : cor",
+    "shortcut": "",
+    "tag": [
+        "%exercicecorrection"
+    ],
+    "trigger": ":cor"
+}

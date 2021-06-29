@@ -1,0 +1,20 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Tableau de variation f' et f - 1 valeur | :tabvar1",
+    "shortcut": "",
+    "tag": [
+        "\\begin{tikzpicture}",
+        "\t\\tkzTabInit[lgt=3.5,espcl=3]",
+        "\t{$x$ /.7 ,$%<f%>'(x)$ /.7,$%<f%>$ /1.4}",
+        "\t{$%<-\\infty%>$, %<val%> ,$%<+\\infty%>$ }",
+        "\t\\tkzTabLine{,%<sgn%> , z, %<sgn%>,}",
+        "\t\\tkzTabVar{%<sgn%>/%<val%>,%<sgn%>/%<val%>,%<sgn%>/%<val%>}",
+        "\\end{tikzpicture}"
+    ],
+    "trigger": ":tabvar1"
+}

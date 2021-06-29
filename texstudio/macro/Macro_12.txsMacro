@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Algorithme | :alg",
+    "shortcut": "",
+    "tag": [
+        "%algo"
+    ],
+    "trigger": ":pseu"
+}

@@ -1,0 +1,137 @@
+\documentclass[a4paper,12pt,french]{book}
+\usepackage[margin=2cm]{geometry}
+\usepackage[thinfonts,latinmath]{uglix2}
+
+\begin{document}
+\chapter{Titre Chapitre}
+\chapter*{Titre Chapitre sans numéro}
+
+\section{Titre section}
+\section*{Titre section sans numéro}
+
+\subsection{Titre sous-section}
+\subsection*{Titre sous-section sans numéro}
+\subsubsection{Titre sous-sous-section}
+\subsubsection*{Titre sous-sous-section sans numéro}
+
+\newpage
+
+\section*{Environnements de base}
+
+\begin{aretenir}
+	bla bla
+\end{aretenir}
+
+\begin{attention}
+	contenu...
+\end{attention}
+
+\begin{notation}[s]
+	Le [s] pour le pluriel
+\end{notation}
+
+\begin{definition}[ : droite]
+	le [ : droite] pour continuer le titre
+\end{definition}
+
+\begin{propriete}
+	contenu
+\end{propriete}
+
+\begin{methode}
+	contenu.
+\end{methode}
+
+\begin{remarque}
+	contenu.
+\end{remarque}
+
+\begin{theoreme}
+	contenu.
+\end{theoreme}
+
+\begin{exemple}
+	contenu.
+\end{exemple}
+
+\begin{consequence}
+	contenu
+\end{consequence}
+
+
+\newpage
+
+\section*{Environnements numérotés automatiquement}
+
+\begin{exercice}[ : inégalité de Machin-Truc]
+	bla bla.
+\end{exercice}
+
+\begin{exercice}[ : Restes chinois]
+	Bla.
+\end{exercice}
+
+\begin{exercicecorrection}
+	bla bla
+\end{exercicecorrection}
+
+\begin{exercicecorrection}
+	bla bla
+\end{exercicecorrection}
+
+\newpage
+
+\section*{Environnement masquables}
+
+
+\afficheEnonce
+
+\begin{enonce}
+	Énoncé Affiché
+\end{enonce}
+
+\cacheEnonce
+
+\begin{enonce}
+	Énoncé Caché
+\end{enonce}
+
+\afficheEnonce
+
+
+\afficheCorrige
+\begin{corrige}
+\begin{encadre}[Réponse]
+	Corrigé affiché
+\end{encadre}
+\end{corrige}
+
+\cacheCorrige
+\begin{corrige}
+\begin{encadre}[Réponse]
+		Corrigé caché
+\end{encadre}
+\end{corrige}
+
+\newpage
+
+Voici du \textsc{Python} en ligne : \pythoninline{print("tu as ",age," ans")}. Joli non ?\\
+
+De même \algoinline{a ← a + 1} est du pseudocode en ligne.
+
+\begin{pythoncode}
+print('Hello')
+\end{pythoncode}
+
+De l'invite de commande \textsc{Python} :
+
+\begin{pythonshell}
+>>> a = 2 * 3
+6
+\end{pythonshell}
+
+\begin{algo}
+a ← 3
+\end{algo}
+
+\end{document}

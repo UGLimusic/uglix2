@@ -1,0 +1,30 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Tangente à la courbe représentative  en un point d'abscisse donné | :tg",
+    "shortcut": "",
+    "tag": [
+        "Tangente à courbe de F au point d'abscisse a",
+        "",
+        "\\def\\xmin{%< %>} \\def\\ymin{%< %>}\\def\\xmax{%< %>}\\def\\ymax{%< %>}",
+        "\\def\\a{%< %>}\t% abscisse du point",
+        "\\def\\F{%< %>} \t% F(\\x)",
+        "\\def\\Fa{%< %>} \t% F(\\a)",
+        "\\def\\Fp{%< %>}   % F'(\\a)",
+        "\\def\\LongTg{1.5/sqrt(\\Fp*\\Fp+1)}  % 1.5 peut être augmenté ou réduit",
+        "\\begin{tikzpicture}",
+        "    \\clip (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);",
+        "    \\draw[fill = white] (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);",
+        "    \\repereal{\\xmin}{\\ymin}{\\xmax}{\\ymax}",
+        "    \\draw[very thick,point@color,<->,domain=\\a-\\LongTg:\\a+\\LongTg,smooth,variable=\\x] plot ({\\x},{\\Fp*(\\x-\\a)+\\Fa});",
+        "    \\draw[domain=\\xmin:\\xmax,smooth,variable=\\x] plot ({\\x},{\\F});",
+        "    \\draw[domain=\\a:\\a,smooth,variable=\\x] plot ({\\a},{\\Fa})\\ball;",
+        "\\end{tikzpicture}",
+        ""
+    ],
+    "trigger": ":tg"
+}

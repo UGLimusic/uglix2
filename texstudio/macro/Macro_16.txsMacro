@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Exemple | :exe",
+    "shortcut": "",
+    "tag": [
+        "\\begin{exemple}[%< %>]",
+        "%< %>",
+        "\\end{exemple}"
+    ],
+    "trigger": ":exe"
+}

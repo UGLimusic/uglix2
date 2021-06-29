@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Notation | :not",
+    "shortcut": "",
+    "tag": [
+        "\\begin{notation}[%< %>]",
+        "%< %>",
+        "\\end{notation}"
+    ],
+    "trigger": ":not"
+}

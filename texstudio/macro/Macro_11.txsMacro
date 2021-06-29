@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "À retenir | :are",
+    "shortcut": "",
+    "tag": [
+        "%aretenir"
+    ],
+    "trigger": ":are"
+}

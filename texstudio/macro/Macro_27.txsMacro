@@ -1,0 +1,15 @@
+{
+    "abbrev": "",
+    "description": [
+        "\\afficheEnonce",
+        "\\cacheEnonce"
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Énoncé masquable | :enm",
+    "shortcut": "",
+    "tag": [
+        "%enonce"
+    ],
+    "trigger": ":enm"
+}

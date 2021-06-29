@@ -1,0 +1,21 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Tracer la courbe représentative | :plot",
+    "shortcut": "",
+    "tag": [
+        "\\def\\xmin{%<xmin%>} \\def\\ymin{%<ymin%>}\\def\\xmax{%<xmax%>}\\def\\ymax{%<ymax%>}",
+        "\\def\\F{%<F(\\x)%>}",
+        "\\begin{tikzpicture}",
+        "\t\\clip (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);",
+        "\t\\draw[fill = white] (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);",
+        "\t\\repereal{\\xmin}{\\ymin}{\\xmax}{\\ymax}",
+        "\t\\draw[thick,domain=\\xmin:\\xmax,smooth,variable=\\x] plot ({\\x},{\\F});\t\t",
+        "\\end{tikzpicture}"
+    ],
+    "trigger": ":plot"
+}

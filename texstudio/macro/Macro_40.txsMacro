@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Écriture machine | :tw",
+    "shortcut": "",
+    "tag": [
+        "\\texttt{%< %>}"
+    ],
+    "trigger": ":tw"
+}

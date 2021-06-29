@@ -1,0 +1,17 @@
+{
+    "abbrev": ":enumt",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Liste à puces | :enumt",
+    "shortcut": "",
+    "tag": [
+        "\\begin{enumerate}[\\textbullet]",
+        "\t\\item \t%< %>",
+        "\t\\item \t%< %>\t",
+        "\\end{enumerate}"
+    ],
+    "trigger": ":enumt"
+}

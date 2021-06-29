@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Guillemets | :og",
+    "shortcut": "",
+    "tag": [
+        "« %< %> »"
+    ],
+    "trigger": ":og"
+}

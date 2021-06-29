@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Python : code | :pyc",
+    "shortcut": "",
+    "tag": [
+        "%pythoncode"
+    ],
+    "trigger": ":pyc"
+}

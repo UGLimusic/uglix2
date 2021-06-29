@@ -1,0 +1,25 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Diagramme de Tukey | :tukey",
+    "shortcut": "",
+    "tag": [
+        "\\def\\valmin{%<MIN%>}\\def\\valmax{%<MAX%>}",
+        "\\def\\qun{%<Q1%>}\\def\\me{%<Me%>}\\def\\qtrois{%<Q3%>}",
+        "\\def\\scalemin{%<ScMin%>}\\def\\scalenext{%<ScNxt%>}\\def\\scalemax{%<ScMax%>}",
+        "\\begin{tikzpicture}[]",
+        "\t\\draw[ -> ] (\\scalemin,0) -- (\\scalemax,0);",
+        "\t\\foreach \\x in {\\scalemin,\\scalenext,...,\\scalemax}{\\draw (\\x,.1)--(\\x,-.1)node[below]{\\x};}",
+        "\t\\draw (\\valmin,1.5) -- (\\valmax,1.5);",
+        "\t\\draw[fill = gray!50] (\\qun,1) rectangle (\\qtrois,2);",
+        "\t\\draw (\\me,1)--(\\me,2);",
+        "\t\\draw (\\valmin,1.25)--(\\valmin,1.75);",
+        "\t\\draw (\\valmax,1.25)--(\\valmax,1.75);",
+        "\\end{tikzpicture}"
+    ],
+    "trigger": ":tukey"
+}

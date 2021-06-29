@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Liste alphabétique | :enuma",
+    "shortcut": "",
+    "tag": [
+        "\\begin{enumerate}[\\bfseries a.]",
+        "\t\\item \t%< %>",
+        "\t\\item \t%< %>\t",
+        "\\end{enumerate}"
+    ],
+    "trigger": ":enuma"
+}

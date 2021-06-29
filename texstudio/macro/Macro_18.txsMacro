@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Exercice - énoncé | :exo",
+    "shortcut": "",
+    "tag": [
+        "\\begin{exercice}[%< %>]",
+        "%< %>",
+        "\\end{exercice}"
+    ],
+    "trigger": ":exo"
+}

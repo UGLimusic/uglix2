@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Liste tirets | :enum-",
+    "shortcut": "",
+    "tag": [
+        "\\begin{enumerate}[--]",
+        "\t\\item \t%< %>",
+        "\t\\item \t%< %>\t",
+        "\\end{enumerate}"
+    ],
+    "trigger": ":enum-"
+}

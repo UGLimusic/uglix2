@@ -1,0 +1,17 @@
+{
+    "abbrev": "cal",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Calcul | :cal",
+    "shortcut": "",
+    "tag": [
+        "\\begin{tabbing}",
+        "$%< %>$ \t\\=  $=%< %> $\\\\",
+        "\t\t\\>  $=%< %>$\\\\",
+        "\\end{tabbing}"
+    ],
+    "trigger": ":cal"
+}

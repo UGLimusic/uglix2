@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Petites capitales | :sc",
+    "shortcut": "",
+    "tag": [
+        "\\textsc{%< %>}"
+    ],
+    "trigger": ":sc"
+}

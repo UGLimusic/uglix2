@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Méthode | :met",
+    "shortcut": "",
+    "tag": [
+        "\\begin{methode}[%< %>]",
+        "%< %>",
+        "\\end{methode}"
+    ],
+    "trigger": ":met"
+}

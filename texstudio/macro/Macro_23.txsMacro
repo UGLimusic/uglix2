@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Remarque | :rem",
+    "shortcut": "",
+    "tag": [
+        "\\begin{remarque}[%< %>]",
+        "%< %>",
+        "\\end{remarque}"
+    ],
+    "trigger": ":rem"
+}

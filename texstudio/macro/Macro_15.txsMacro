@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Définition | :def",
+    "shortcut": "",
+    "tag": [
+        "\\begin{definition}[%< %>]",
+        "%< %>",
+        "\\end{definition}"
+    ],
+    "trigger": ":def"
+}

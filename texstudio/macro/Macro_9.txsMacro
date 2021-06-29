@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Python : shell | :pys",
+    "shortcut": "",
+    "tag": [
+        "%pythonshell"
+    ],
+    "trigger": ":pys"
+}

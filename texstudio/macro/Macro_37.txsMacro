@@ -1,0 +1,28 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Arbre de probabilité à 2 niveau | :tre",
+    "shortcut": "",
+    "tag": [
+        "\\def\\abun{%<$A$%>}",
+        "\\def\\abdeux{%<$\\barmaj{A}$%>}",
+        "\\def\\abtrois{%<$B$%>}",
+        "\\def\\abquatre{%<$\\barmaj{B}$%>}",
+        "",
+        "\\def\\alun{%<$p(A)$%>}",
+        "\\def\\aldeux{%<$p(\\barmaj{A})$%>}",
+        "",
+        "\\def\\altrois{%<$P_A(B)$%>}",
+        "\\def\\alquatre{%<$P_A(\\barmaj{B})$%>}",
+        "",
+        "\\def\\alcinq{%<$P_{\\barmaj{A}}(B)$%>}",
+        "\\def\\alsix{%<$P_{\\barmaj{A}}(\\barmaj{B})$%>}",
+        "",
+        "\\arbreproba"
+    ],
+    "trigger": ":tre"
+}

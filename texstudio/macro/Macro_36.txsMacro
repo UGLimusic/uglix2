@@ -1,0 +1,25 @@
+{
+    "abbrev": "integrale",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Représenter une intégrale | :integrale",
+    "shortcut": "",
+    "tag": [
+        "\\def\\xmin{%<xmax%>} \\def\\ymin{%<ymin%>}\\def\\xmax{%<xmax%>}\\def\\ymax{%<ymax%>}",
+        "\\def\\F{%<F(\\x)%>}",
+        "\\def\\intmin{%<a%>}\\def\\intmax{%<b%>}",
+        "\\begin{tikzpicture}",
+        "\\clip (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);",
+        "\\draw[fill = white] (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);",
+        "\\repereal{\\xmin}{\\ymin}{\\xmax}{\\ymax}",
+        "\\fill[pattern=north east lines, pattern color = blue] plot[domain=\\intmin:\\intmax,smooth,variable=\\x]({\\x},{\\F}) ",
+        "--(\\intmax,0)--(\\intmin,0) -- cycle;",
+        "\\draw [thick, dashed] (\\intmin,0) -- plot[domain=\\intmin:\\intmax,smooth,variable=\\x]({\\x},{\\F})-- (\\intmax,0);",
+        "\\draw[thick,domain=\\xmin:\\xmax,smooth,variable=\\x] plot ({\\x},{\\F});",
+        "\\end{tikzpicture}"
+    ],
+    "trigger": ":integrale"
+}
