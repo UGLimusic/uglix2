@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Colonne centrée dans un tableau | :colc",
+    "shortcut": "",
+    "tag": [
+        ">{\\centering\\arraybackslash}p{%<largeur%>}"
+    ],
+    "trigger": ":colc"
+}
