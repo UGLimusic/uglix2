@@ -15,3 +15,8 @@ Remember to
 ## Extras
 
 - Macros & Templates for TeXstudio
+
+## MacOS
+
+`Library/Frameworks/Python.framework/Versions/3.xx/bin/pygmentize` must be copied to `Library/TeX/texbin`
+
